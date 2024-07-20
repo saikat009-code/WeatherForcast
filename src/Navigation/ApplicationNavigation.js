@@ -4,13 +4,19 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from '../Home';
 import Weather from '../Screens/Weather';
+import Splash from '../Auth/Splash';
 
 const Stack = createStackNavigator();
 
 const ApplicationNavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Splash">
+        <Stack.Screen
+          name="Splash"
+          component={Splash}
+          options={{headerShown: false}}
+        />
         <Stack.Screen
           name="Home"
           component={Home}
